@@ -11,6 +11,15 @@ public class Song {
 	public Song() {
 		super();
 	}
+	
+	public Song(String title, String artist) {
+		super();
+		this.title = title;
+		this.artist = artist;
+		
+		//아니면   this(title, artist, "", "", 0, 0);
+	}
+	
 
 	public Song(String title, String artist, String album, String composer, int year, int track) {
 		super();
@@ -73,6 +82,10 @@ public class Song {
 	public void show() {
 		System.out.println( artist + " " + title + "(" + album + ", " + year + ", " + track + "번 track" + ", " + composer + " 작곡)" );
 	}
+
+
+
+
 	
 	
 	

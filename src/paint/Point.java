@@ -1,60 +1,67 @@
 package paint;
 
-public class Point {
-	private int x1;
-	private int y1;
-	private int x2;
-	private int y2;
+public class Point implements Drawable{
+	private int x;
+	private int y;
+
+
 
 	public Point() {
 		super();
 	}
+	
 
-	public Point(int x1, int y1, int x2, int y2) {
+	public Point(int x, int y) {
 		super();
-		this.x1 = x1;
-		this.y1 = y1;
-		this.x2 = x2;
-		this.y2 = y2;
+		this.x = x;
+		this.y = y;
+	}
+	
+	
+	
+	public int getX() {
+		return x;
 	}
 
-	public int getX1() {
-		return x1;
+
+	public void setX(int x) {
+		this.x = x;
 	}
 
-	public void setX1(int x1) {
-		this.x1 = x1;
+
+	public int getY() {
+		return y;
 	}
 
-	public int getY1() {
-		return y1;
-	}
 
-	public void setY1(int y1) {
-		this.y1 = y1;
+	public void setY(int y) {
+		this.y = y;
 	}
-
-	public int getX2() {
-		return x2;
-	}
-
-	public void setX2(int x2) {
-		this.x2 = x2;
-	}
-
-	public int getY2() {
-		return y2;
-	}
-
-	public void setY2(int y2) {
-		this.y2 = y2;
-	}	
 	
 	public void show() {
-		System.out.println("점 [x=" + x1 + ", y=" + y1 + "]을 그렸습니다.");
-		System.out.println("점 [x=" + x2 + ", y=" + y2 + "]을 그렸습니다.");
+		System.out.println("점 [x=" + x + ", y=" + y + "]을 그렸습니다.");
+	}
+
+
+	public void show(boolean visible) {
+		if(visible == true) {
+			show();
+			return;
+		} 
+		
+		System.out.println("점 [x=" + x + ", y=" + y + "]을 지웠습니다.");	
+	}
+	
+	@Override
+	public void draw() {
+		show();
 		
 	}
+
+
+
+
+
 
 
 

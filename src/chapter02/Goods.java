@@ -2,6 +2,7 @@ package chapter02;
 
 public class Goods {	
 	
+	private static int countOfGoods;
 	private String name;
 	private int price;
 	private int countStock;
@@ -9,6 +10,7 @@ public class Goods {
 	
 	public Goods() {
 		super();
+		countOfGoods++;
 	}
 
 	public Goods(String name, int price, int countStock, int countSold) {
@@ -17,6 +19,7 @@ public class Goods {
 		this.price = price;
 		this.countStock = countStock;
 		this.countSold = countSold;
+		countOfGoods++;
 	}
 	
 	public String getName() {
@@ -51,8 +54,12 @@ public class Goods {
 			countSold = 0;
 		}
 		this.countSold = countSold;
-	}
+	}	
 	
+	public static int getCountOfGoods() {
+		return countOfGoods;
+	}
+
 	public String toString() {
 		return "상품의 이름은 " + this.name + ", 가격은 " + this.price + "원, 재고개수는 " + this.countStock + "개, 팔린개수는 " + this.countSold + "개 입니다.";
 	}

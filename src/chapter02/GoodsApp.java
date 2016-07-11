@@ -3,6 +3,9 @@ package chapter02;
 public class GoodsApp {
 
 	public static void main(String[] args) {
+		
+		System.out.println(Goods.getCountOfGoods());
+		
 		Goods camera = new Goods();
 		
 		camera.setName("nikon");
@@ -17,6 +20,8 @@ public class GoodsApp {
 		
 		int discountPrice = camera.calcDiscountPrice(50);
 		System.out.println(discountPrice);
+		
+		System.out.println(Goods.getCountOfGoods());
 		
 		
 	}
